@@ -2,13 +2,13 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def index(request):
-    pageHtml = "Rango says hey there world!" +\
-    "<br/><a href='/rango/about/'>About</a>"
+    # Construct a dictionary to pass to the template engine as
+    # it's context. Note the key 'boldmessage' is the same as
+    # {{ boldmessage }} in the HTML template!
 
-    return HttpResponse(pageHtml)
+    context_dictionary = {'boldmessage' : "I am bold font from the context."}
+    return render(request, 'rango/index.html', context_dictionary)
 
 def about(request):
-    pageHtml = "Rango says here is the about page." +\
-   "<br/><a href='/rango/'>Index</a>"
-
-    return HttpResponse(pageHtml)
+    context_dictionary = {'italicmessage' : 'I am in italic font.'}
+    return render(request, 'rango/about.html', context_dictionary)
