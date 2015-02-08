@@ -1,2 +1,5 @@
 7.3.2 "overrided" should be "overridden"
 7.3.5 "a HTML list" should be "an HTML list"
+9.4.0 "However, it is good to get a feeling for the underlying mechanics, because using such applications." - What?
+
+
