@@ -1,0 +1,1 @@
+Change all the references to rango urls to use the url template tag.!!
