@@ -1,5 +1,4 @@
 7.3.2 "overrided" should be "overridden"
 7.3.5 "a HTML list" should be "an HTML list"
 9.4.0 "However, it is good to get a feeling for the underlying mechanics, because using such applications." - What?
-
-
+11.5 If we choose to have <p> visits: {{ visits }}</p>, the context dictionary in index(request) doesn't get the item "visits" in the if block- we need to add the line "context_dict['visits'] = visits" before response=render(request,...)

@@ -19,7 +19,7 @@
 
     <br />
     {% if user.is_authenticated %}
-    <a href="/rango/category/{{ category.slug }}/add_page/">Add a New Page</a>
+    <a href="{% url 'add_page' category.slug %}">Add a New Page</a>
     {% endif %}
 
     {% else %}
