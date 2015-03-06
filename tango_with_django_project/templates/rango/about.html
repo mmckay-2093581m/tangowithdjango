@@ -5,15 +5,12 @@
 {% block title %}About{% endblock %}
 
 {% block body_block %}
-    <h1>Rango says...</h1>
-    About page!
-    <i>{{ italicmessage }}</i><br />
-    <p>visits: {{ visits}}</p>
-    <img src="{% static "images/rango2.jpg" %}" alt="Picture of Rango"/>
+<div class="page-header">
+    <h1>About</h1>
+</div>
+<div>
+    <p>Rango's about page</p>
 
-    <br />
-    <hr />
-    This tutorial has been put together by Michael McKay, 2093581.
-    <br />
-    <img src="{% static "images/me.png" %}" alt="Picture of me."/>
+    <img width="90" height="100" src="{% static 'images/rango.jpg' %}" alt="Picture of Rango" /> <!-- New line -->
+</div>
 {% endblock %}
