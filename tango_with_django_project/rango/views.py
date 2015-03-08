@@ -72,7 +72,7 @@ def category(request, category_name_slug):
         context_dict['category'] = category
 
         if request.method == 'POST':
-            query = request.POST['query']
+            query = request.POST.get('query', False)
             if query:
                 query = query.strip()
                 results = run_query(query)
