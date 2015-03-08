@@ -2,7 +2,7 @@ from django.contrib import admin
 from rango.models import Category, Page, UserProfile
 
 class PageAdmin(admin.ModelAdmin):
-    list_display = ('title', 'category', 'url')
+    list_display = ('title', 'category', 'url', 'views', 'id')
 
 class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug' : ('name',)}

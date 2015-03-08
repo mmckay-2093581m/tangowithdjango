@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from rango.models import Category, Page
@@ -70,6 +70,14 @@ def category(request, category_name_slug):
         pages = Page.objects.filter(category = category)
         context_dict['pages'] = pages
         context_dict['category'] = category
+
+        if request.method == 'POST':
+            query = request.POST['query']
+            if query:
+                query = query.strip()
+                results = run_query(query)
+                context_dict['results'] = results
+
     except Category.DoesNotExist:
         pass
 
@@ -141,3 +149,20 @@ def search(request):
             result_list = run_query(query)
 
     return render(request, 'rango/search.html', {'result_list': result_list})
+
+def track_url(request):
+    redirectUrl = '/rango/'
+
+    if request.method == 'GET':
+        page_id = None
+        print request.GET
+        if 'page_id' in request.GET:
+            page_id = request.GET['page_id']
+
+            page = Page.objects.get(id=page_id)
+            page.views += 1
+
+            page.save()
+            redirectUrl = page.url
+
+    return redirect(redirectUrl)
