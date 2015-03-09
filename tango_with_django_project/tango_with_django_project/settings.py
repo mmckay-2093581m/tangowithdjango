@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'cj_hhhk_7r5fpih0b%_er-m2(mx%0a)20y+@bsb#gbbipsq*$2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = True
 
@@ -28,7 +28,7 @@ TEMPLATE_DIRS = [
     TEMPLATE_PATH
     ]
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mmckay99.pythonanywhere.com']
 
 # Application definition
 
